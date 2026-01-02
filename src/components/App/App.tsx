@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import css from './App.module.css';
 
-import CafeInfo from '../CafeInfo/CafeInfo';
-import VoteOptions from '../VoteOptions/VoteOptions';
-import VoteStats from '../VoteStats/VoteStats';
-import Notification from '../Notification/Notification';
-import type { VoteType } from '../../../types/index';
+import CafeInfo from '../CafeInfo/CafeInfo.tsx';
+import VoteOptions from '../VoteOptions/VoteOptions.tsx';
+import VoteStats from '../VoteStats/VoteStats.tsx';
+import Notification from '../Notification/Notification.tsx';
+import type { VoteType } from '../../types.ts/index.ts';
 
 const initialVotes = {
   good: 0,
