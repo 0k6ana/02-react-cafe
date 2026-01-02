@@ -27,16 +27,28 @@ export default function App() {
     setVotes(initialVotes);
   };
 
-  const totalVotes = votes.good + votes.neutral + votes.bad;
+const totalVotes = votes.good + votes.neutral + votes.bad;
+
+const positiveRate =
+  totalVotes > 0 ? Math.round((votes.good / totalVotes) * 100) : 0;
+
 
   return (
     <div className={css.app}>
       <CafeInfo />
-      <VoteOptions onVote={handleVote} onReset={resetVotes} />
-
+    <VoteOptions
+    onVote={handleVote}
+    onReset={resetVotes}
+    canReset={totalVotes > 0}
+    />
       {}
       {totalVotes > 0 ? (
-        <VoteStats votes={votes} />
+        <VoteStats
+      votes={votes}
+      totalVotes={totalVotes}
+      positiveRate={positiveRate}
+/>
+
       ) : (
         <Notification message="No feedback yet" />
       )}
